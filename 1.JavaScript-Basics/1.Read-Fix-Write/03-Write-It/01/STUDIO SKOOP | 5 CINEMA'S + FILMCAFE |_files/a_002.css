@@ -1,0 +1,1354 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS STUDIO SKOOP */
+img{
+	border-style:none;
+	vertical-align:top;
+	
+}
+a{
+	text-decoration:none;
+	color: #333333;
+}
+a:active{
+	outline:none;
+}
+.clearer{
+	clear:both;
+}
+body{
+	font-family: "proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size:10px;
+	line-height:inherit;
+	/*background:url(/images/design/body_back.gif) repeat-y;*/
+	background-color:#f8f8f8;
+	color:#333333;
+}
+p{
+	font-size:14px;
+	line-height: 1.5em;	
+	padding: 10px 0;
+}
+.footerblock{
+	color:#808080;
+	padding:10px 40px 10px 40px;
+	border-top: #e6e6e6 1px solid;
+	line-height:20px;
+}
+.footerblock .info{
+	font-size:1.4em;
+	padding-bottom:20px;
+}
+.footerblock div.info p{
+	font-size:14px;
+	padding-bottom:20px;
+}
+.footerblock .extrainfo{
+	font-size:1.1em;
+}
+.footerblock div.extrainfo p{
+	font-size:11px;
+}
+.footerblock .support{
+	text-align:center;
+	margin:20px 0 20px 0;
+}
+.footerblock .support a{
+	margin:10px 15px;
+}
+#fixit{
+	position:fixed;
+	width:100%;
+	z-index:99;
+	height:1px;
+}
+#centerleft{
+	max-width:1201px;
+	min-width:771px;
+	margin:0 auto;
+	position:relative;
+	height:1px,
+}
+
+#leftcol{
+	width:250px;
+	height:100%;
+	background:#eeeeee;
+	color:#6b6b6b;
+	float:left;
+	overflow:hidden;
+	border-left:#e2e2e2 1px solid;
+	border-right:#e2e2e2 1px solid;
+}
+#leftcol .logo{
+	width:100%;
+	height:auto;
+}
+#leftcol .menuelement{
+	border-bottom:#e2e2e2 1px solid;
+}
+#leftcol .submenuelement{
+	border:none;
+}
+#leftcol .submenuelement:last-child{
+	border-bottom:#e2e2e2 1px solid;
+}
+#leftcol nav ul li{
+	background: none;
+	position:relative;
+	height:38px;
+	cursor:pointer;	
+}
+#leftcol nav ul li a{
+	display:block;
+	box-sizing:border-box;
+	height:38px;
+	width:251px;
+	font-family:"proxima-nova-condensed-n4", "proxima-nova-condensed",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size:1.6em;
+	padding-left:15px;
+	line-height:38px;
+	color:#6b6b6b;
+	background-color:#eeeeee;
+	background-color: red;
+	text-decoration:none;
+	text-transform:uppercase;
+	-webkit-transition: background 0.15s linear;
+    -moz-transition: background 0.15s linear;
+    -ms-transition: background 0.15s linear;
+    -o-transition: background 0.15s linear;
+    transition: background 0.1<5s linear;
+}
+#leftcol nav ul li.active{
+	background-color:#E2E2E2;
+	}
+#leftcol nav ul li a:hover{
+	background-color:#c81227;
+	color:white; 
+}
+#leftcol nav ul li.submenu{
+	height:auto;
+	display:none;
+}
+#leftcol nav ul li a, nav ul li a:hover{
+	font-family:"proxima-nova-condensed-n4", "proxima-nova-condensed",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size:1.6em;
+	padding-left:15px;
+	line-height:38px;
+	color:#6b6b6b;
+	background: none;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+#leftcol nav ul li a.sub, nav ul li a.sub:hover{
+	padding-left:40px;
+	font-size:1.6em;
+	color:#6b6b6b;
+	background-image:url('images/design/substripe.png');
+	background-repeat: no-repeat;
+	background-position: 15px 18px;
+}
+#leftcol nav ul li a.sub:hover{
+	color:white; 
+	background-image:url('images/design/substripe_white.png');
+}
+
+#leftcol nav ul li .arrow{
+	position:absolute;
+	right:10px;
+	top:16px;
+	width:6px;
+	height:12px;
+	overflow:hidden;
+}
+#leftcol nav ul li img{
+	display:none;
+}
+#leftcol nav ul li.select img.select{
+	margin-left:-10px;
+	display:inline;
+}
+#leftcol nav ul li:hover img.hover{
+	/*display:inline;*/
+}
+#leftcol .zoek{
+	height:80px;
+	position:relative;
+	
+}
+.rightcol .mail{
+	height:40px;
+	position:relative;
+}
+.rightcol .nieuwsbrief .title{
+	font-size:1.6em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-style: normal;
+	font-weight: 700;
+	padding: 0 0 10px 0;
+	margin-top:20px;
+}
+.rightcol .nieuwsbrief .intro{
+}
+#content .rightcol .nieuwsbrief input{
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	position:absolute;
+	border:0px;
+	top:0px;
+	left:0px;
+	height:40px;
+	width:205px;
+	padding-left:10px;
+	background:#e0e0e0;
+	color:#6b6b6b;
+	line-height:40px;
+	font-size: 1.2em;
+}
+#content .rightcol .nieuwsbrief input.red{
+	border: #DD0F0F 1px solid;
+}
+.rightcol .nieuwsbrief .verstuur{
+	cursor:pointer;
+	position: absolute;
+	width:40px;
+	height:40px;
+	top:0px;
+	right:0px;
+}
+
+#content .rightcol .nieuwsbrief .intro a, #content .rightcol .nieuwsbrief .intro a:hover{
+	/*text-decoration:none;
+	padding-left:15px;
+	background:url(/images/design/nieuwsbrief.png) no-repeat 0 4px;
+	color:#333333;*/
+}
+
+#leftcol .zoek .label, .rightcol .mail .label{
+	padding-left:15px;
+	font-family:Verdana, Geneva, sans-serif;
+	line-height:52px;
+	text-transform:uppercase;
+	
+}
+#leftcol .zoek input{
+	border:none;
+	position:absolute;
+	top:20px;
+	left:15px;
+	height:40px;
+	width:205px;
+	padding-left:10px;
+	background:#e0e0e0;
+	color:#6b6b6b;
+	line-height:42px;
+	font-size:1.2em;
+}
+input:focus{ 
+	outline: none; 
+}
+
+#leftcol .socialmedia{
+	height:115px;
+	position:relative;
+}
+#leftcol .socialmedia .facebook{
+	position:absolute;
+	height:53px;
+	width:52px;
+	top:18px;
+	left:21px;
+	background:url(/images/design/menu_facebook.png);
+}
+#leftcol .socialmedia .facebook img{
+	display:none;
+}
+#leftcol .socialmedia .twitter{
+	position:absolute;
+	height:53px;
+	width:52px;
+	top:18px;
+	left:85px;
+	background:url(/images/design/menu_twitter.png);
+}
+#leftcol .socialmedia .twitter img{
+	display:none;
+}
+#center{
+	position:relative;
+	max-width:948px;
+	min-width:771px;
+	margin:0 auto;
+	padding-left:252px;
+	background:url(/images/design/back_left.png) repeat-y;
+	border-right:#e6e6e6 1px solid;
+}
+#topbeeld{
+	width:100%;
+	/*height:350px;*/
+	overflow:hidden;
+	position:relative;
+}
+#topbeeld img{
+	width:100%; 
+	height:auto;
+}
+.responsivemap {
+    position: relative;
+    padding-bottom: 476px;
+    height: 0;
+}
+.responsivemap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.dontshow{
+	display:none;
+}
+.overzicht{
+	margin-top: -27px;	
+}
+div.overzicht a{
+	background-color: #f8f8f8;
+	display: block;
+	width:249px;
+	height:87px;
+}
+div.overzicht a:hover{
+	 background-color: #eeeeee;
+    -webkit-transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+div.overzicht .btn{
+	width:249px;
+	height:87px;
+	border-bottom: solid #e6e6e6 1px;
+	position:relative;
+	cursor:pointer;
+}
+div.overzicht .btn img{
+	width:38px;
+	height:38px;
+	position:absolute; 
+	top:24px;
+	left:24px; 
+}
+div.overzicht .btn p{
+	line-height: 0px;
+	text-transform: uppercase;
+	font-size: 1.6em;
+	color:#333333;
+	font-weight: 900;
+	position:absolute; 
+	top:34px;
+	left:74px; 
+}
+#topbeeld .navigation{
+	height:52px;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	z-index:9999;
+	right:0;
+	top:15;
+}
+
+#topbeeld .navigation .title{
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.90em;
+	float:right;
+	margin-right:30px;
+	color:#ffffff;
+	line-height:52px;
+	text-transform:uppercase;
+	text-align:right;
+}
+#topbeeld .navigation a, #topbeeld .navigation a:hover{
+	color:#ffffff;
+	text-decoration:none;
+	font-size:1.6em;
+}
+/*#topbeeld .navigation{
+	height:52px;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	z-index:9999;
+	right:0;
+	bottom:0;
+}
+
+#topbeeld .navigation .title{
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	float:right;
+	margin-left:2px;
+	min-width:240px;
+	color:#d1232a;
+	background:#ffffff;
+	padding:0 5px;
+	line-height:52px;
+	text-transform:uppercase;
+	text-align:center;
+}
+#topbeeld .navigation a, #topbeeld .navigation a:hover{
+	color:#d1232a;
+	text-decoration:none;
+	font-size:1.6em;
+}*/
+#topbeeld .next img,#topbeeld .prev img{
+	display:none;
+}
+#topbeeld .next{
+	z-index:9999;
+	position:absolute;
+	top:37%;
+	right:20px;
+	width:69px;
+	height:69px;
+	overflow:hidden;
+	background:url(/images/design/pijl_wit_rechts.svg) no-repeat;
+	cursor:pointer;
+}
+#topbeeld .prev{
+	z-index:9999;
+	position:absolute;
+	top:37%;
+	left:20px;
+	width:69px;
+	height:69px;
+	overflow:hidden;
+	background:url(/images/design/pijl_wit.svg) no-repeat;
+	cursor:pointer;
+}
+#topbeeld .next img, #topbeeld .prev img{
+	height:69px;
+	width:69px;
+}
+#topbeeld2{
+	height:350px;
+	overflow:hidden;
+	position:relative;
+}
+#topbeeld2 img{
+	width:100%; 
+	height:auto;
+}
+
+#topbeeld2 .navigation{
+	height:52px;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+
+#topbeeld2 .navigation .title{
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	float:right;
+	margin-left:2px;
+	min-width:240px;
+	color:#d1232a;
+	background:#ffffff;
+	padding:0 5px;
+	line-height:52px;
+	text-transform:uppercase;
+	text-align:center;
+}
+#topbeeld2 .navigation a, #topbeeld .navigation a:hover{
+	color:#d1232a;
+	text-decoration:none;
+	font-size:1.6em;
+}
+#topbeeld2 .navigation{
+	height:52px;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+
+#topbeeld2 .navigation .title{
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	float:right;
+	margin-left:2px;
+	min-width:240px;
+	color:#d1232a;
+	background:#ffffff;
+	padding:0 5px;
+	line-height:52px;
+	text-transform:uppercase;
+	text-align:center;
+}
+#topbeeld2 .navigation a, #topbeeld .navigation a:hover{
+	color:#d1232a;
+	text-decoration:none;
+	font-size:1.6em;
+
+}
+#topbeeld2 .navigation img{
+	display:none;
+}
+#topbeeld2 .navigation .next{
+	float:right;
+	margin-left:2px;
+	width:52px;
+	height:52px;
+	overflow:hidden;
+	background:url(/images/design/arrow_right.png);
+}
+#topbeeld2 .navigation .prev{
+	float:right;
+	margin-left:2px;
+	width:52px;
+	height:52px;
+	overflow:hidden;
+	background:url(/images/design/arrow_left.png);
+}
+#content{
+	position:relative;
+	background: right repeat-y url("http://www.studioskoop.be/images/design/back_maincontent.gif") ;
+}
+#content .rightcol{
+	float:right;
+	padding-bottom:50px;
+	width:249px;
+	margin-top:27px;
+	background:#ffffff;
+}
+
+#content .rightcol .item{
+	width:90%;
+	margin:0px auto 10px;
+	padding-top:15px;
+	border-top: #e6e6e6 1px solid;
+}
+
+#content .rightcol .item img{
+	width:100%;
+	height:auto;
+}
+#content .rightcol .item2{
+	width:85%;
+	margin:15px auto 10px;
+}
+
+#content .rightcol .item2 img{
+	width:100%;
+	height:auto;
+}
+#content .rightcol .nieuwsbrief{
+	margin:0px auto 10px;
+	padding: 0 5%;
+}
+
+#content .rightcol .onder{
+	border-top: none;
+	border-bottom: #e6e6e6 1px solid;
+}
+#content .rightcol p.title{
+	line-height:1em;
+	font-size:1.6em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	/*padding: 20px 0 10px 0;*/
+	padding: 20px 0 10px 0;
+}
+#content .rightcol p.title:first-child{
+	padding-top: 0px;
+}
+#content .rightcol p{
+}
+#content .rightcol ul{
+	padding: 10px 0;
+	line-height:29px;
+	font-size:1.4em;
+	text-transform:uppercase;
+}
+#content .rightcol p.activefilms{
+	/*text-transform:uppercase;*/
+	line-height: 1.4em; 
+}
+#content .rightcol p.activefilms span{
+	display:block;
+	margin-bottom: 5px;
+}
+#content .rightcol p.listfilms span{
+	display:block;
+	margin-bottom: 5px;
+}
+#content .rightcol table.uren{
+	
+	font-family:"proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	padding: 10px 0;
+	line-height:29px;
+	font-size:1.3em;
+}
+#content .rightcol table.uren p{
+	font-size:1em;
+	display:inline;
+}
+#content .rightcol p a, #content .rightcol p a:hover{
+	color:#d1232a;
+	text-decoration:none;	
+}
+#content .rightcol p.activefilms a, #content .rightcol p.activefilms a:hover, 
+#content .rightcol p.listfilms a, #content .rightcol p.listfilms a:hover{
+	color: #333333;
+	text-decoration:none;
+}
+
+#content .maincontent{
+	overflow:hidden;
+	/*border-right: #e6e6e6 1px solid;*/
+	padding-bottom:40px;
+}
+
+#content .lineblock{
+	border-bottom: #e6e6e6 1px solid;
+}
+
+#fixedweekmenu{
+	/*position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:40;*/
+	/*width:100%;*/   
+	position: relative;
+    max-width: 948px;
+    min-width: 840px;
+    margin: 0px auto;
+    padding-left: 252px;
+}
+.leftcolfixedweekmenu{
+	display:none;
+	font-size:1.6em;
+	line-height: 1em;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	height:37px;
+	padding: 25px 0 25px 0;
+	margin:0 0 0 0;
+	background:#FFFCFC;
+	overflow:hidden;
+	width:100%;
+	border-bottom: 1px solid #e6e6e6;
+}
+.showit{
+	display:inherit;
+}
+#content .maincontent .weekmenu{
+	position:relative;
+	/*width:100%;*/
+	font-size:1.6em;
+	line-height: 1em;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	height:37px;
+	padding: 25px 0 25px 40px;
+	margin:0 0 0 0;
+}
+#content .maincontent .weekmenu div, #fixedweekmenu div{
+	float:left;
+}
+#content .maincontent .weekmenu div.loading{
+	float: none;
+	/*display:none;*/
+	position:absolute;
+	top:110px;
+	left:44px;
+	font-size:1.1em;
+	line-height: 1.3em;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	color: #E2E2E2;
+	height:40px;
+	width:240px;
+	
+}
+#fixedweekmenu div .loading{
+	float: none;
+	display:none;
+	position:absolute;
+	top:110px;
+	left:295px;
+	font-size:1.1em;
+	line-height: 1.3em;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	color: #E2E2E2;
+	height:40px;
+	width:240px;
+	
+}
+#content .maincontent .weekmenu .periode, #fixedweekmenu .periode{
+	cursor:pointer;	
+	margin-right:10px;
+	padding:0 5px 0 10px;
+	line-height:37px;
+	text-transform:uppercase;
+	text-align:center;
+	position:relative;
+}
+ #fixedweekmenu .periode0{
+	margin-left:40px;
+}
+#content .maincontent .weekmenu .verwacht, #fixedweekmenu .verwacht{
+	float:right;
+	/*margin-right:56px;	*/
+	padding: 0 10px;
+}
+#fixedweekmenu .overzicht_fixed{
+	float:right;
+	margin-top: -25px;	
+	padding: 0;
+	width:249px;
+	display:block;
+	border-left:1px solid #e6e6e6;
+	border-right:1px solid #e6e6e6;
+}
+#content .maincontent .weekmenu .overzicht_fixed{
+	display:none;
+}
+#fixedweekmenu .overzicht_fixed a{
+	background-color: #f8f8f8;
+	display: block;
+	width:249px;
+	height:87px;
+}
+#fixedweekmenu .overzicht_fixed a:hover{
+	 background-color: #eeeeee;
+    -webkit-transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+#fixedweekmenu .overzicht_fixed .btn{
+	width:249px;
+	height:87px;
+	border-bottom: solid #e6e6e6 1px;
+	position:relative;
+	cursor:pointer;
+}
+#fixedweekmenu .overzicht_fixed .btn img{
+	width:38px;
+	height:38px;
+	position:absolute; 
+	top:24px;
+	left:24px; 
+}
+#fixedweekmenu .overzicht_fixed .btn p{
+	line-height: 0px;
+	text-transform: uppercase;
+	font-size: 1em;
+	color:#333333;
+	font-weight: 900;
+	position:absolute; 
+	top:35px;
+	left:72px; 
+}
+
+#fixedweekmenu .select a, #fixedweekmenu .select a:hover{
+	color:#ffffff;
+	text-decoration:none;
+}
+#content .maincontent .weekmenu .select a, #content .maincontent .weekmenu .select a:hover{
+	color:#ffffff;
+	text-decoration:none;
+}
+#content .maincontent .weekmenu .select, #fixedweekmenu .select{
+	background:url(/images/design/weekmenu_links.png) no-repeat;
+}
+#content .maincontent .weekmenu .select .rechts, #fixedweekmenu .select .rechts{
+	display:block;
+	position:absolute;
+	right:-6px;
+	top:0;
+}
+#content .maincontent .weekmenu .rechts, #fixedweekmenu .rechts{
+	display:none;
+}
+#content .maincontent .weekmenu .hover, #fixedweekmenu .hover{
+	display:none;
+	position:absolute;
+	left:10px;
+	top:0;
+}
+#fixedweekmenu .hover a, #fixedweekmenu .hover a:hover{
+	color:#d1232a;
+}
+#content .maincontent .weekmenu .hover a, #content .maincontent .weekmenu .hover a:hover{
+	color:#d1232a;
+}
+
+#content .maincontent .filmlist{
+	margin:0 40px;
+	min-height:100px;
+}
+#content .maincontent .filmlist .film {
+	margin-top:20px;
+	min-height:150px;
+	width:100%;
+	position:relative
+}
+#content .maincontent .filmlist .no_results {
+	background: #F8F8F8;
+	margin-top:20px;
+	width:100%;
+	position:relative;
+	text-align:center;
+}
+#content .maincontent .filmlist .no_results p{
+	line-height:1.4em;
+	font-size:1.4em;
+}
+
+#content .maincontent .filmlist .overzichtsfilm {
+	margin-top:20px;
+	min-height:225px;
+	width:100%;
+	position:relative
+}
+#content .maincontent .filmlist .filmstonesfilm {
+	margin-top:20px;
+	min-height:225px;
+	width:100%;
+	position:relative
+}
+
+#content .maincontent .filmlist .film .image{
+	position:absolute;
+	top:0;
+	left:0;
+	width:226px;
+	height:119px;
+	overflow:hidden;
+}
+#content .maincontent .filmlist .film .image_affiche{
+	position:absolute;
+	top:0;
+	left:0;
+	width:169px;
+	height:222px;
+	overflow:hidden;
+}
+.image-overlay:hover{
+	opacity: 0.60;
+  	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	cursor:pointer;
+}
+.image-overlay{
+position:absolute;
+top: 0;
+left: 0;
+	width: 226px;
+	height: 119px;
+	z-index: 10;
+	background-color: black;
+  	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+	transition: opacity .25s ease-in-out;
+}
+.crosshairs{
+	padding-left:102px;
+	padding-top:48px;
+}
+#content .maincontent .filmlist .film .hours{
+	position:absolute;
+	top:119px;
+	left:0;
+	width:226px;
+	height:31px;
+	font-size:1.3em;
+	line-height:34px;
+	background:#E6E6E6;
+	text-align:center;
+	/*
+	padding-left:16px;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	*/
+	border-bottom: #CCCCCC 1px solid;
+}
+#content .maincontent .filmlist .film .hours p{
+	display:inline;
+}
+#content .maincontent .filmlist .film .title{
+	padding-left:243px;
+	line-height:1em;
+	font-size:1.6em;
+	/*color:#d1232a;*/
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+#content .maincontent .filmlist .film .title span{
+	color:#808080;
+	font-size: 12px;
+}
+#content .maincontent .filmlist .overzichtsfilm .title {
+	padding-left:193px;
+	line-height: 1.4em;
+}
+#content .maincontent .filmlist .filmstonesfilm .title {
+	padding-left:193px;
+	line-height: 1.4em;
+}
+
+#content .maincontent .filmlist .film .extra{
+	padding-left:243px;
+	padding-top:8px;
+	line-height:1.5em;
+	font-size:1.3em;
+	color:#808080;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+}
+#content .maincontent .filmlist .overzichtsfilm .extra {
+	padding-left:193px;
+}
+#content .maincontent .filmlist .filmstonesfilm .extra {
+	padding-left:193px;
+}
+#content .maincontent .filmlist .film .short{
+	margin-left:241px;
+	padding-top:8px;
+	line-height:1.4em;
+	font-size:1.4em;
+}
+#content .maincontent .filmlist .filmstonesfilm .short{
+	margin-left:193px;
+	padding-top:8px;
+	line-height:1.5em;
+	font-size:1.4em;
+}
+#content .maincontent .filmlist .film .uren {
+	margin-left:193px;
+	line-height:1.4em;
+	font-size:1.4em;
+}
+#content .maincontent .filmlist .film .uren_overzicht {
+	margin-top:15px;
+}
+#content .maincontent .filmlist .film .uren table{
+	color:#6d6d6d;
+}
+#content .maincontent .filmlist .film .uren table td{
+	padding-bottom:4px;
+}
+#content .maincontent .filmlist .film .uren table p{
+	display:inline;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+#content .maincontent .filmlist .film .short a, #content .maincontent .filmlist .film .short a:hover{
+	text-decoration:none;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color:#d1232a;
+	padding-left:15px;
+	background:url(/images/design/meer.png) no-repeat 0 4px;
+}
+#content .maincontent .page{
+	margin:0 40px;
+}
+#content .maincontent .page p.title,h1{
+	line-height:1em;
+	font-size:4.0em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	padding:40px 0 10px 0;
+}
+#content .maincontent .page p.subtitle{
+	line-height:1em;
+	font-size:1.4em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	padding: 20px 0 10px 0;
+}
+#content .maincontent .page p.dark{
+	color:#333333;
+}
+#content .maincontent .page h2{
+	line-height:1em;
+	font-size:1.5em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	padding: 20px 0 10px 0;
+	color:#333333;
+}
+#content .maincontent .page p.extra{
+	border-left: #6F6F6E 2px solid;
+	padding: 0 15px;
+	line-height:1.5em;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-weight: 700;
+}
+#content .maincontent .page p{
+	padding: 10px 0 0 0;
+	line-height:25px;
+	line-height:1.5em;
+	font-size:1.4em;
+}
+
+#content .maincontent .page a{
+	font-weight: 700;
+}
+
+/*-------WYSIWYG EDITOR---------*/
+#content .maincontent .page ul{
+	padding: 10px 0 0 0;
+} 
+#content .maincontent .page ul li{
+	list-style-type: disc;
+	margin-left: 35px;
+} 
+#content .maincontent .page ol li{
+	list-style-type: decimal;
+	margin-left: 35px;
+}
+#content .maincontent .page li{
+	line-height:1.5em;
+	font-size:1.4em;
+}
+#content .maincontent .page b{
+	font-weight: 600;
+}
+#content .maincontent .page i{
+	font-style: italic;
+}
+figure{
+	margin:20px auto;
+	padding:10px; 
+	border:1px solid #e2e2e2;
+}
+figure img{
+	width:100%;
+}
+
+/*-------END WYSIWYG EDITOR--------*/
+
+#content .maincontent .page p a, #content .maincontent .page p a:hover,
+#content .maincontent .page li a, #content .maincontent .page li a:hover{
+	color:#d1232a;
+	text-decoration:none;	
+}
+#content .maincontent .page .programblock{
+	width: 100%;
+	margin:20px auto;
+}
+#content .maincontent  .speelweek li{
+	line-height:1em;
+	font-size:1.4em;
+	padding:5px 0 5px 25px;
+	color:#d1232a;
+	text-transform:uppercase;
+	background:url(/images/design/listarrow_red.png) no-repeat 0 6px;
+}
+#content .maincontent .page .arrowlist li{
+	line-height:1em;
+	font-size:1.4em;
+	padding:5px 0 5px 25px;
+	color:#d1232a;
+	text-transform:uppercase;
+	background:url(/images/design/listarrow_red.png) no-repeat 0 5px;;
+}
+#content .maincontent .page .programblock .day{
+	background: #f7f7f6;
+	line-height:2em;
+	font-size:1.6em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	padding: 15px 0 15px 13px;
+}
+.programblock .day:first-child{
+	border-top: #CCCCCC 1px solid;
+}
+#content .maincontent .page .programblock .dayplan{
+	width: 100%;
+	border-top: #CCCCCC 1px solid;
+	border-bottom: #CCCCCC 1px solid;
+	background:#eeedeb;
+	display:table;
+}
+#content .maincontent .page .programblock .daycol{
+	width: 50%;
+	/*float:left;*/
+	display: table-cell;
+	vertical-align:top;
+}
+#content .maincontent .page .programblock .daycolumn{
+	width: 50%;
+}
+#content .maincontent .page .programblock .daycol .hour{
+	width: 65px;
+	float:left;
+	height:100%;
+	line-height:2em;
+	font-size:1.4em;
+	margin:10px 0  10px 10px;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+}
+#content .maincontent .page .programblock .daycol .playlist{
+
+	line-height:2em;
+	font-size:1.4em;
+	color:#d1232a;
+	text-transform:uppercase;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	padding:10px 0  10px 20px;
+	height:100%
+}
+#content .maincontent .page .programblock .daycol .playlist a{
+	text-decoration:none;
+	color:#d1232a;
+}
+#content .maincontent .page .programblock .daycol .playlist a:hover{
+	/*text-decoration:underline;*/
+	color:#d1232a;
+}
+#content .maincontent .page .programblock .daycol1{
+	border-right: #CCCCCC 1px solid;
+}
+#content .maincontent .page .programblock .daycolumn .hour{
+	width: 75px;
+	line-height:2em;
+	font-size:1.4em;
+	margin:10px 0  10px 10px;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+}
+#content .maincontent .page .delen{
+	height:100px;
+	position:relative;
+}
+#content .maincontent .page .delen p.title{
+	line-height:1em;
+	font-size:1.6em;
+	color:#d1232a;
+	text-transform:none;
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	padding: 20px 0 10px 0;
+}
+#content .maincontent .page .delen .facebook{
+	position:absolute;
+	height:53px;
+	width:52px;
+	bottom:0px;
+	left:0px;
+	background:url(/images/design/delen_facebook.png);
+}
+#content .maincontent .page .delen .facebook img{
+	display:none;
+}
+#content .maincontent .page .delen .twitter{
+	position:absolute;
+	height:53px;
+	width:52px;
+	bottom:0px;
+	left:65px;
+	background:url(/images/design/delen_twitter.png);
+}
+#content .maincontent .page .delen .twitter img{
+	display:none;
+}
+.stronger{
+	font-weight: 700;
+}
+.credits{
+	margin-top: 30px;
+	padding-top:20px; 
+	padding-bottom: 10px;
+	margin-left:-40px;
+	margin-right:-40px;
+	border-top:1px solid #e6e6e6;
+	text-align: center;
+}
+
+.bezoekmobiel{
+	display:none;
+	text-align:center;
+	background: #d1232a;
+	height:30px;
+}
+
+.bezoekmobiel a, .bezoekmobiel a:visited,.bezoekmobiel a:active,.bezoekmobiel a:hover{
+	font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size:11px;
+	line-height:30px;
+	padding:0 0 0 0;
+	color:#ffffff;
+	background: #d1232a;
+	text-transform:uppercase;
+	margin:0 0 0 0;
+	border:none;
+}
+@media screen and (max-height:750px){
+	/* Structuur*/
+
+	#fixit{
+		position:absolute;
+		width:100%;
+	}	
+	#leftcol{
+		height:auto;
+	}
+}
+@media screen and (max-width:1170px){
+	/* Structuur*/
+	
+	div.overzicht .btn{
+		height:67px;
+	}
+	div.overzicht a{
+		height:67px;
+	}
+	div.overzicht .btn img{
+		top:19px;
+		width:28px;
+		height:28px;
+	}
+	div.overzicht .btn p{
+		top:24px;
+		left:66px;
+		font-size: 1.4em;
+	}
+	#content .maincontent .weekmenu{
+		position:relative;
+		/*width:100%;*/
+		font-size:1.4em;
+		line-height: 1em;
+		font-family:"proxima-nova-n7","proxima-nova",Arial, Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		height:37px;
+		padding: 15px 0 15px 40px;
+		margin:0 0 0 0;
+	}
+	#content .maincontent .weekmenu .periode{
+		cursor:pointer;	
+		margin-right:5px;
+		padding:0 5px 0 10px;
+		line-height:37px;
+		text-transform:uppercase;
+		text-align:center;
+		position:relative;
+	}
+	#content .maincontent .weekmenu .verwacht{
+		margin-right:15px;
+	}
+	#fixit{
+		position:absolute;
+		width:100%;
+	}	
+	#leftcol{
+		height:auto;
+	}
+}
+
+@media screen and (max-width:400px){
+
+	.bezoekmobiel{
+		display:block;
+	}
+}
