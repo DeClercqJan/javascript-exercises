@@ -21,4 +21,30 @@
 
     // your code here
 
+console.log(document.querySelector(".material figure img"));
+console.log(gallery[0]);
+
+img_number = document.querySelector(".material figure img");
+console.log(img_number);
+i = 0
+
+document.getElementById("next").addEventListener("click", function() {    console.log("test knop");
+    document.querySelector(".material figure img").setAttribute("src",gallery[i]);
+    i++;
+    console.log(i);
+})
+
 })();
+
+/* 
+        <p>When you click the button, change the source of the image to the next one listed in the
+          <strong>gallery</strong> array.</p>
+      </section>
+      <section class="material">
+        <figure>
+          <img src="../../_shared/img/bell.svg" alt="Carousel" />
+        </figure>
+        <div class="actions">
+          <button type="button" id="next">Next image</button>
+
+*/ 

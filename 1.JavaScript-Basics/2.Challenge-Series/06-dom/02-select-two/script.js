@@ -12,5 +12,8 @@
 (function() {
 
     // your code here
-
+    document.querySelector("#target").innerHTML = "owned";
 })();
+
+// Select the element with the id "target" (not using getElementById!) and replace its content with
+// "owned".</p>

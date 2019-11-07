@@ -19,6 +19,7 @@ function test() {
 
 
 // Complete the script to make the calculator work. To do it use the switch. edit: hoe moet ik dit aanpakken? mss best iemand vragen om me op weg te helpen
+// edit: mijn switch is eigenlijk gewoon de vraag of het addition dan wel iets anders is.
 
 var text;
 var fruits = document.getElementById("myInput").value;

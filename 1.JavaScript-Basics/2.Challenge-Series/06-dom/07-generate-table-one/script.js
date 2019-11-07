@@ -13,4 +13,25 @@
 
     // your code here
 
+table = ``
+row = "";
+    for (i = 0; i < 10; i++) {
+        console.log("test_for_loop");
+    row = row + "<td></td>"    
+    }
+
+
+table = `<table><tr>${row}</td></table>`
+
+document.getElementById("target").innerHTML = table;
+
 })();
+
+/*
+
+                <p>Inside the element with id "target", create an HTML table with 1 column and 10 rows.</p>
+            </section>
+            <section class="material">
+                <div id="target"></div>
+
+*/

@@ -14,3 +14,15 @@
     // your code here
 
 })();
+
+/*
+
+            <section class="explain">
+                <p>Display some text inside the target element. Create a wave effect using at least 5 different font
+                    sizes.</p>
+            </section>
+            <section class="material">
+                <p id="target">Woo-hoo! I'm making waves! Wéééé! Oh ... I think I'm having seasickness ...</p>
+            </section>
+
+*/
