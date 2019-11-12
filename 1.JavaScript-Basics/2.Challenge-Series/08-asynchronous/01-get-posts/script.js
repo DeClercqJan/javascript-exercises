@@ -17,7 +17,7 @@
         console.log(window.lib.getPosts("error"));
     })
 */
-  // jasper zijn oplossing
+  // sander zijn oplossing
   (() => {
     const callback = (err, articles) => {
       console.table(articles);

@@ -9,37 +9,56 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+
 (() => {
   // your code here
 
-  // oplossing, geïnspireerd door Sander
+  // oplossing, geïnspireerd door Sander. EDIT: zijn eigen code werkt niet als ik het hier plak. Maar toch interessante ideen 
   // enkel posts oproepen en binnen posts roep je getComments aan met de info die je over de articles hebt verzameld
 
   (() => {
     const callback = (err, articles) => {
       // console.table(articles);
       console.log(articles);
+      articles_array = [];
+      comments_array = [];
       const callback_2 = (err, comments) => {
         console.log(comments);
+        comments_array.push(comments);
+        articles_array.push(comments);
+        // console.table(comments);
+        
+         articles.forEach(element_2 => {
+           console.log(element_2.comments);
+           
+          // console.log(element_2.id);
+        })
+        
       };
       // to do:   adds the comments obtained in a comments property of the item.
-      new_array = [];
-      new_array.push({ type: "Fiat", model: "500", color: "white" });
+      // new_array = [];
+      // new_array.push({ type: "Fiat", model: "500", color: "white" });
       // console.log(new_array);
       // console.log(new_array.type);
       // console.log(new_array[0].type);
-      console.log(articles[0].title);
+      // console.log(articles[0].title);
       articles.forEach(element => {
+        // console.log(element.title)
+        element.comments = "test";  // DEZE KOMT GELIJK HET DICHTST IN DE BUURT
+        console.log(element);
         // console.log(element);
         // console.log(element.id);
         // articles.push(element.id);
         comment = window.lib.getComments(element.id, callback_2);
-        //  element.push(comment);
-        console.log(comment);
+        // element.push(comment);
+        // console.log(comment);
         // element.join(comment);
         // console.log(element);
+        element.comments = comment;
+        console.log(comments_array);
       });
-      // console.log(articles);
+      console.log(articles);
+      console.log(articles_array);
     };
     document.getElementById("run").addEventListener("click", () => {
       window.lib.getPosts(callback);
@@ -47,6 +66,7 @@
     });
   })();
 })();
+
 
 /*
 You must have noticed, in the previous exercise, that the articles received via the window.lib.getPosts function included an id property. 

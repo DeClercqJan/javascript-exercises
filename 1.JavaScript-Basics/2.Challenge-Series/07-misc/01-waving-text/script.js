@@ -12,6 +12,37 @@
 (function() {
 
     // your code here
+    // document.getElementById("target").style.fontSize = "5em";
+    text = document.getElementById("target").innerHTML;
+    // console.log(text);
+    // console.log(typeof text);
+    // console.log(text.charAt(4));
+    text_appended="";
+    for (i=0; i<text.length; i ++) {
+        // console.log(i);
+        // console.log(text[i]);
+        // console.log(`<span style='color:red;>'${text[i]} </span>`);
+        text_appended += `<span style='color:red';>${text[i]}</span>`;
+        /*
+        var html = text[i].innerHTML;
+        text[i].innerHTML = html.substr(0, html.length-2)
+        + "<span color='red'>"
+        + text[i].innerHTML.substr(-2)
+        + "</span>";
+        */
+    }
+document.getElementById("target").innerHTML = text_appended;
+
+    /* text_array = text.split('');
+    console.log(text_array);
+    text_array.forEach(element => {
+        console.log(element);
+        // console.log(typeof element);
+    });
+    text_array.map(function(letter) {
+console.log(letter)
+    })
+    */
 
 })();
 
