@@ -48,20 +48,19 @@
   var varCounter = 0;
 
   var varName = function() {
-    if (varCounter <= 3) {
+    letters = text.split("");
+    letters_changed = letters.map(function(letter) {
+      // deze if hieronder moet mijn stop zijn zodat het niet te groot wordt
+      if (varCounter >= 50) {
+        console.log(varCounter); // VRAAG: waarom blijft deze tellen na 50?
+        clearInterval(intervalId);  
+      }
+      letter_changed = `<span style='font-size:${10+varCounter}px;'>${letter}</span>`;
       varCounter++;
-      console.log(varCounter);
-      letters = text.split("");
-      letters_changed = letters.map(function(letter) {
-        letter_changed = `<span style='font-size:${varCounter}em;'>${letter}</span>`;
-        return letter_changed;
-      });
-      text_changed = letters_changed.join("");
-      document.getElementById("target").innerHTML = text_changed;
-    } else {
-      clearInterval(intervalId);
-      document.getElementById("target").innerHTML = text;
-    }
+      return letter_changed;
+    });
+    text_changed = letters_changed.join("");
+    document.getElementById("target").innerHTML = text_changed;
   };
 
   intervalId = setInterval(varName, 500);
