@@ -10,30 +10,40 @@
 // You will have time to focus on it later.
 
 function test() {
-    return true;
+  return true;
 }
 
 (function() {
-    return true;
-})();
+  // console.log(document.getElementsByClassName("operator"));
+  // OPGELET ARRAY FROM WORDT NIET ONDERSTEUND DOOR INTERNET EXPLORER
+  console.log(Array.from(document.getElementsByClassName("operator")));
 
+  operand_one = parseInt(document.getElementById("op-one").value);
+  
+  operand_two = parseInt(document.getElementById("op-two").value);
+
+  operators = Array.from(document.getElementsByClassName("operator"));
+  operators.forEach(element => {
+  //  console.log(element);
+    element.addEventListener("click", function() {
+    //  console.log(element.id);
+      operator_id = element.id;
+     // console.log(operator_id);
+      switch (operator_id) {
+        case "addition": console.log(`The result of the ${operator_id} is ${operand_one+operand_two}`);
+        break;
+        case "substraction": console.log(`The result of the ${operator_id} is ${operand_one-operand_two}`);
+        break;
+        case "multiplication": console.log(`The result of the ${operator_id} is ${operand_one*operand_two}`);
+        break;
+        case "division": console.log(`The result of the ${operator_id} is ${operand_one/operand_two}`);
+        break;
+      }
+    });
+
+  });
+  return true;
+})();
 
 // Complete the script to make the calculator work. To do it use the switch. edit: hoe moet ik dit aanpakken? mss best iemand vragen om me op weg te helpen
 // edit: mijn switch is eigenlijk gewoon de vraag of het addition dan wel iets anders is.
-
-var text;
-var fruits = document.getElementById("myInput").value;
-
-switch(fruits) {
-  case "Banana":
-    text = "Banana is good!";
-    break;
-  case "Orange":
-    text = "I am not a fan of orange.";
-    break;
-  case "Apple":
-    text = "How you like them apples?";
-    break;
-  default:
-    text = "I have never heard of that fruit...";
-} 

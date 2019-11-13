@@ -9,40 +9,72 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-  (function() {
-    // HIERONDER DE OPLOSSING VAN SANDER -> NOG EENS BETER TE BEKIJKEN OM TE BEGRIJPEN EN EVENTUEEL MIJN EIGEN CODE NOG AAN TE PASSEN
-    //const maxFontsizeAddition = 100;
-    const minFontSizePixels = 12;
-    // const fontSizeSteps = (wordcount, maxFontsizeAddition) => maxFontsizeAddition/wordcount;
-     const highRes = true;
-     const separator = (highRes) ? "": " ";
-     
-     const textElement = document.getElementById("target");
-    
-     let textArr = textElement.innerText.split(separator);
- 
-     let shift = 0;
- 
-     setInterval(()=>{
- 
-         textElement.innerHTML = textArr.map((word, index)=>{
- 
-             if (++shift >= textArr.length/2) {
-                 shift = 0;
-             }
-             return `
-             <span style="font-size:${(shift + minFontSizePixels)}px">${word}</span>
-             `
-         }).join(separator);
- 
-     }, 100);
+(function() {
+  /*
+  // HIERONDER DE OPLOSSING VAN SANDER -> NOG EENS BETER TE BEKIJKEN OM TE BEGRIJPEN EN EVENTUEEL MIJN EIGEN CODE NOG AAN TE PASSEN
+  //const maxFontsizeAddition = 100;
+  const minFontSizePixels = 12;
+  // const fontSizeSteps = (wordcount, maxFontsizeAddition) => maxFontsizeAddition/wordcount;
+  const highRes = true;
+  const separator = highRes ? "" : " ";
 
+  const textElement = document.getElementById("target");
 
+  let textArr = textElement.innerText.split(separator);
 
-  /* EERSTE POGING, BENADERT HET RESULTAAT, MAAR IS NIET GOED
+  let shift = 0;
+
+  setInterval(() => {
+    textElement.innerHTML = textArr
+      .map((word, index) => {
+        if (++shift >= textArr.length / 2) {
+          shift = 0;
+        }
+        return `
+             <span style="font-size:${shift +
+               minFontSizePixels}px">${word}</span>
+             `;
+      })
+      .join(separator);
+  }, 100);
+  */
+
+  // EERSTE POGING, BENADERT HET RESULTAAT, MAAR IS NIET GOED
   // your code here
   // document.getElementById("target").style.fontSize = "5em";
-  text = document.getElementById("target").innerHTML;
+
+  var varCounter = 0;
+
+  var varName = function(){
+    if(varCounter <= 2) {
+         varCounter++;
+         /* your code goes here */
+         console.log(varCounter);
+         text = document.getElementById("target").innerHTML;
+         // console.log(typeof text);
+         letters = text.split("");
+         //console.log(letters);
+         // console.log(letters.length);
+         letters_changed = letters.map(function(letter) {
+           // console.log(letter)
+           letter_changed = `<span style='font-size:5em;'>${letter}</span>`;
+           // die return is belangrijk preceis!
+           return letter_changed;
+         });
+         // console.log(letters_changed);
+         // console.log(letters_changed.join(" "));
+         text_changed = letters_changed.join("");
+         document.getElementById("target").innerHTML = text_changed;
+    } else {
+         clearInterval(intervalId);
+    }
+};
+
+  
+intervalId = setInterval(varName, 500);
+intervalId;
+
+  /*
   setTimeout(function() {
     for (i = 0; i < text.length; i++) {
       // console.log(text[i]);
@@ -54,7 +86,7 @@
       document.getElementById("target").innerHTML = letter_appended;
     }
   }, 1000);
-  */
+*/
 
   // console.log(text);
   // console.log(typeof text);
