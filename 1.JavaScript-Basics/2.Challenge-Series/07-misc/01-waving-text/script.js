@@ -43,36 +43,29 @@
   // your code here
   // document.getElementById("target").style.fontSize = "5em";
 
+  text = document.getElementById("target").innerHTML;
+
   var varCounter = 0;
 
-  var varName = function(){
-    if(varCounter <= 2) {
-         varCounter++;
-         /* your code goes here */
-         console.log(varCounter);
-         text = document.getElementById("target").innerHTML;
-         // console.log(typeof text);
-         letters = text.split("");
-         //console.log(letters);
-         // console.log(letters.length);
-         letters_changed = letters.map(function(letter) {
-           // console.log(letter)
-           letter_changed = `<span style='font-size:5em;'>${letter}</span>`;
-           // die return is belangrijk preceis!
-           return letter_changed;
-         });
-         // console.log(letters_changed);
-         // console.log(letters_changed.join(" "));
-         text_changed = letters_changed.join("");
-         document.getElementById("target").innerHTML = text_changed;
+  var varName = function() {
+    if (varCounter <= 3) {
+      varCounter++;
+      console.log(varCounter);
+      letters = text.split("");
+      letters_changed = letters.map(function(letter) {
+        letter_changed = `<span style='font-size:${varCounter}em;'>${letter}</span>`;
+        return letter_changed;
+      });
+      text_changed = letters_changed.join("");
+      document.getElementById("target").innerHTML = text_changed;
     } else {
-         clearInterval(intervalId);
+      clearInterval(intervalId);
+      document.getElementById("target").innerHTML = text;
     }
-};
+  };
 
-  
-intervalId = setInterval(varName, 500);
-intervalId;
+  intervalId = setInterval(varName, 500);
+  intervalId;
 
   /*
   setTimeout(function() {
