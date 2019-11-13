@@ -10,7 +10,6 @@
 // You will have time to focus on it later.
 
 (function() {
-
   // your code here
   text = document.getElementById("target").innerHTML;
   document.getElementById("target").innerHTML = "";
@@ -27,14 +26,21 @@
   typed_string = [];
   for (i = 0; i < characters.length; i++) {
     console.log(characters[i]);
+    // document.getElementById("target").innerHTML += characters[i];
+    // DEZE HIERONDER WAS MOEILIJK OM GOED TE KRIJGEN: CONSOLE MET BREAKPOINTS HIELP. OOK i MOET WORDEN MEEGEGEVEN IN FUNCTIE, ANDERS UNDEFINED
+    (function (i) {
+      setTimeout(function () {
+            document.getElementById("target").innerHTML += characters[i];
+       }, 100*i);
+      })(i);
     /*
+
     typed_array.push(characters[i]);
     console.log(typed_array);
     typed_string = typed_array.join("");
     console.log(typed_string);*/
-        document.getElementById("target").innerHTML += characters[i];
+    //    document.getElementById("target").innerHTML += characters[i];
   }
-
 })();
 
 /*
