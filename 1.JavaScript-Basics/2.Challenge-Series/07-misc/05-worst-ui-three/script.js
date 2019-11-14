@@ -13,21 +13,46 @@
 
     // your code here
 
-
+// TIP: VEEL VALT TE PIKKEN/AAN TE PASSEN UIT VORIGE OEFENING
 slot_html_collection = document.getElementsByClassName("slot");
  console.log(slot_html_collection);
 slot_array= Array.from(slot_html_collection);
 console.log(slot_array);
 
 slot_array.forEach(element => {
-    console.log(element);
+    // console.log(element);
     element_input = element.firstElementChild;
-    console.log(element_input);
+    // console.log(element_input);
     element_button = element.lastElementChild;
-    console.log(element_button);
+    // console.log(element_button);
+    // element_data_min = element.firstElementChild.getAttribute("data-min");
+    // console.log(element_data_min);
+    // element_data_max = element.firstElementChild.getAttribute("data-max");
+    // console.log(element_data_max);
     // IDEETJE: wat pikken van de typewriteroefening? als het een slotmachine moet zijn, dan moet het constant bewegen
     element_button.addEventListener("click", function(element2) {
         console.log("test");
+        console.log(element2);
+        element_sibling = element2.srcElement.previousElementSibling;
+        console.log(element_sibling);
+        element_data_min = element2.srcElement.previousElementSibling.getAttribute("data-min");
+        console.log(element_data_min);
+        element_data_max = element2.srcElement.previousElementSibling.getAttribute("data-max");
+        console.log(element_data_max);
+        // console.log(typeof element2);
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+          }
+        random_number = getRandomIntInclusive(element_data_min, element_data_max);
+        console.log(random_number);
+        random_number_string = random_number.toString();
+        if (random_number_string.length < 2) {
+            random_number_string = `0${random_number_string}`;
+          }
+        element_sibling.value = random_number_string;     
+        document.getElementById("target").innerHTML = `0${document.getElementById("part-one").value}${document.getElementById("part-two").value}${document.getElementById("part-three").value}${document.getElementById("part-four").value}`;
     })
 })
 // eerst eens voor 1'tje doen. lukt wel om iets random te pakken, maar is het dit wat gevraagd wordt?
