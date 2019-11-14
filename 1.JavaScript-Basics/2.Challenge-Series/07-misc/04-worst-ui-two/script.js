@@ -13,11 +13,16 @@
   original_number = document.getElementById("target").innerHTML;
   // console.log(original_number);
   button_html_collection = document.getElementsByTagName("button");
-  console.log(button_html_collection);
+  // console.log(button_html_collection);
   button_array = Array.from(button_html_collection);
-  // console.log(button_array);
-  //console.log(button_array[2]);
-  // console.log(button_array[0].innerHTML);
+  //console.log(button_array);
+  // console.log(button_array[2]);
+//  console.log(button_array[0].innerHTML);
+
+  // target_array = [];
+
+  document.getElementById("part-two").innerHTML = 80;
+
   button_array.forEach(element => {
     //console.log(element);
     // element_html = element.innerHTML;
@@ -26,10 +31,11 @@
     // console.log(element_data_min);
     // element_data_max = element.getAttribute("data-max");
     // console.log(element_data_max);
-    
-    element.setAttribute("counter", 0);
-    element_target_counter = element.getAttribute("counter");
-    
+
+    // EENS COUNTER UIT WEG RUIMEN OM TE ZIEN WAT DAT GEEFT
+    // element.setAttribute("counter", 0);
+    // element_target_counter = element.getAttribute("counter");
+
     // console.log(element_target_counter);
     element.addEventListener("click", function(element2) {
       // console.log(element2);
@@ -42,34 +48,50 @@
       element2_target_data_min = element2.target.getAttribute("data-min");
       // console.log(element2_target_data_min);
       element2_target_data_max = element2.target.getAttribute("data-max");
-      // console.log(element2_target_data_max);
+      console.log(element2_target_data_max);
+      console.log(typeof element2_target_data_max);
       element2_target_value = element2.target.innerHTML;
-      console.log(element2_target_value);
+      // console.log(element2_target_value);
+
       // console.log(typeof element2_target_value);
-      // PROBLEEM: DIE COUNTER BLIJFT STIJGEN MET ALS NEGATIEF RESULTAAT DAT ALS JE OP 1 KNOP DRUKT EN DAN OP EEN ANDERE, DE KNOP NIET WORDT GERESET
-      element2_target_counter = element2.target.getAttribute("counter");
-      element2_target_new_counter = parseInt(element2_target_counter) + 1;
-      element2.target.setAttribute("counter", element2_target_new_counter);
-      console.log(element2_target_new_counter);
-      element2_target_new_value = parseInt(element2_target_value) + element2_target_new_counter;
-      console.log(element2_target_new_value);
+      // PROBLEEM: DIE COUNTER BLIJFT STIJGEN MET ALS NEGATIEF RESULTAAT DAT ALS JE OP 1 KNOP DRUKT EN DAN OP EEN ANDERE, DE KNOP NIET WORDT GERESET. 
+      // OPGELOST
+
+      // EENS COUNTER UIT WEG RUIMEN OM TE ZIEN WAT DAT GEEFT
+      // element2_target_counter = element2.target.getAttribute("counter");
+      // element2_target_new_counter = parseInt(element2_target_counter) + 1;
+      // element2.target.setAttribute("counter", element2_target_new_counter);
+      // console.log(element2_target_new_counter);
+
+      // HIERONDER STUKJES OM 1) TE ZORGEN DAT HET BINNEN DE MAX BLIJFT + 2) ERVOOR TE ZORGEN DAT ENKELE CIJFERS EEN NUL KRIJGEN
+      element2_target_new_value_number = parseInt(element2_target_value) + 1;
+      if (element2_target_new_value_number  == parseInt(element2_target_data_max)+1) {
+        console.log("test");
+        console.log( element2_target_new_value_number);
+        element2_target_new_value_number = element2_target_data_min;
+        console.log( element2_target_new_value_number );
+           }
+      // console.log(element2_target_new_value_number);
+      // console.log(typeof element2_target_new_value_number);
+      element2_target_new_value = element2_target_new_value_number.toString();
+      // console.log(typeof element2_target_new_value);
+      // console.log(element2_target_new_value.length);
+      if (element2_target_new_value.length < 2) {
+        element2_target_new_value = `0${element2_target_new_value}`;
+      }
+      //console.log(element2_target_new_value.length);
       document.getElementById(element2_target_id).innerHTML = element2_target_new_value;
 
-      // TO DO: ZORGEN DAT MIJN KNOPPEN JUIST VERANDEREN EN OOK DAT DE TARGET HTML GOED VERANDERT
-      // document.getElementById("target").innerHTML = element_2_target_new_value;
-      // MSS een switch voor de verschillende mogelijke knoppen en die dan schrijven met ` en ${} en het moet als string aanzien worden!
-      /* switch(element2_target_id)
-      {
-        case "part-one": console.log("hallo ik ben part one");
-        // document.getElementById("target").innerHTML = `+${element2_target_new_value}000000`
-        break;
-        case "part-two": console.log("hallo ik ben de tweede knop");
-        break;
-      }
-      */
+      // LAATSTE STAP ZIT IK OP VAST: IK MOET DE TARGET VERANDEREN MET IETS A LA target = value_id_1 + value_id_2+value_id_3 + value_id_4
+      // IK DACHT HET IN EEN ARRAY TE STEKEN EN DIE DAN OP TE ROEPEN, MAAR DE FUT IS OP
+      // object = {"test_id": element2_target_new_value};
+      // target_array.push(object);
+      // console.log(target_array)
+      // SIMPELE OPLOSSING; KAN ALLICHT ELEGANTER
+      document.getElementById("target").innerHTML = `0${document.getElementById("part-one").innerHTML}${document.getElementById("part-two").innerHTML}${document.getElementById("part-three").innerHTML}${document.getElementById("part-four").innerHTML}`;
+        
     });
   });
-  // document.getElementById("target").innerHTML = "test";
   /*
   // HIERONDER EENS SNEL BEGINNEN SCHRIJVEN VOOR ALS IK HET AFZONDERLIJK VOOR ELK ZOU DOEN
   part_one_html = document.getElementById("part-one").innerHTML;
@@ -99,15 +121,6 @@ i = 0;
         break;
 
     }
-    // DIT HIERONDER GAT NERGES NAARTOE
-    element.addEventListener("click", function (element_2) {
-        console.log(element_2);
-        console.log(typeof element_2);
-    })
-    element_data_min = element.getAttribute("data-min");
-    console.log(element_data_min);
-
-  });
   */
   // your code here
 })();
