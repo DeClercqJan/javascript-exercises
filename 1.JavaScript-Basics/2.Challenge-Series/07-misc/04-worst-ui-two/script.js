@@ -21,7 +21,7 @@
 
   // target_array = [];
 
-  document.getElementById("part-two").innerHTML = 80;
+  // document.getElementById("part-two").innerHTML = 80;
 
   button_array.forEach(element => {
     //console.log(element);
