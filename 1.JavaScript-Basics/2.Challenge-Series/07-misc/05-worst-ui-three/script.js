@@ -10,53 +10,93 @@
 // You will have time to focus on it later.
 
 (function() {
+  // your code here
 
-    // your code here
+  // VEEL VALT TE PIKKEN/AAN TE PASSEN UIT VORIGE OEFENING
+  slot_html_collection = document.getElementsByClassName("slot");
+  console.log(slot_html_collection);
+  slot_array = Array.from(slot_html_collection);
+  console.log(slot_array);
 
-// TIP: VEEL VALT TE PIKKEN/AAN TE PASSEN UIT VORIGE OEFENING
-slot_html_collection = document.getElementsByClassName("slot");
- console.log(slot_html_collection);
-slot_array= Array.from(slot_html_collection);
-console.log(slot_array);
-
-slot_array.forEach(element => {
-    // console.log(element);
+  slot_array.forEach(element => {
+    console.log(element);
     element_input = element.firstElementChild;
     // console.log(element_input);
     element_button = element.lastElementChild;
     // console.log(element_button);
-    // element_data_min = element.firstElementChild.getAttribute("data-min");
+    element_data_min = element.firstElementChild.getAttribute("data-min");
     // console.log(element_data_min);
-    // element_data_max = element.firstElementChild.getAttribute("data-max");
+    element_data_max = element.firstElementChild.getAttribute("data-max");
     // console.log(element_data_max);
     // IDEETJE: wat pikken van de typewriteroefening? als het een slotmachine moet zijn, dan moet het constant bewegen
+    for (var i = element_data_min; i <= element_data_max; i++) {
+      // EENS CHECKEN OF IK AAN MIJN ELEMENT KAN
+      // console.log(element.firstElementChild.getAttribute("id"));
+      element_id = element.firstElementChild.getAttribute("id");
+      // console.log(element_id);
+      element_value = element.firstElementChild.getAttribute("value");
+      // console.log(element_value);
+      (function(i) {
+        setTimeout(function() {
+          element.firstElementChild.setAttribute("value", i);
+        }, 100 * i);
+      })(i);        
+      // TO DO: ZORGEN DAT HET OOK LOOPT VOOR DE EERSTE INPIUT
+      // TO DO: RESETTEN ZODAT DE LOOP BLIJFT LOPEN
+      // TO DO: DE STOPKNOP WERKT NIET ZOALS HET HOORT. HIJ STOPT ENKEL HET LOPEN VAN DE SLOTMACHINE VAN HET INPUTVELD DAT BIJ DE KNOP HOORT
+      // EVENTUEEL: NOG BETER ZOU ZIJN ALS JE HET SLOTMACHINE KAN STOPPEN OP HET PUNT WAAR HIJ ZIT
+      /*
+      if (element2_target_new_value_number  == parseInt(element2_target_data_max)+1) {
+            console.log("test");
+            console.log( element2_target_new_value_number);
+            element2_target_new_value_number = element2_target_data_min;
+            console.log( element2_target_new_value_number );
+               }
+               */
+    }
+    /*
+    var list = [];
+    for (var i = element_data_min; i <= element_data_max; i++) {
+      // list.push(i);
+      // console.log(i);
+      console.log(element);
+    }
+*/
     element_button.addEventListener("click", function(element2) {
-        console.log("test");
-        console.log(element2);
-        element_sibling = element2.srcElement.previousElementSibling;
-        console.log(element_sibling);
-        element_data_min = element2.srcElement.previousElementSibling.getAttribute("data-min");
-        console.log(element_data_min);
-        element_data_max = element2.srcElement.previousElementSibling.getAttribute("data-max");
-        console.log(element_data_max);
-        // console.log(typeof element2);
-        function getRandomIntInclusive(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-          }
-        random_number = getRandomIntInclusive(element_data_min, element_data_max);
-        console.log(random_number);
-        random_number_string = random_number.toString();
-        if (random_number_string.length < 2) {
-            random_number_string = `0${random_number_string}`;
-          }
-        element_sibling.value = random_number_string;     
-        document.getElementById("target").innerHTML = `0${document.getElementById("part-one").value}${document.getElementById("part-two").value}${document.getElementById("part-three").value}${document.getElementById("part-four").value}`;
-    })
-})
-// eerst eens voor 1'tje doen. lukt wel om iets random te pakken, maar is het dit wat gevraagd wordt?
-/*
+      console.log("test");
+      console.log(element2);
+      element_sibling = element2.srcElement.previousElementSibling;
+      console.log(element_sibling);
+      element_data_min = element2.srcElement.previousElementSibling.getAttribute(
+        "data-min"
+      );
+      console.log(element_data_min);
+      element_data_max = element2.srcElement.previousElementSibling.getAttribute(
+        "data-max"
+      );
+      console.log(element_data_max);
+      // console.log(typeof element2);
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+      }
+      random_number = getRandomIntInclusive(element_data_min, element_data_max);
+      console.log(random_number);
+      random_number_string = random_number.toString();
+      if (random_number_string.length < 2) {
+        random_number_string = `0${random_number_string}`;
+      }
+      element_sibling.value = random_number_string;
+      document.getElementById("target").innerHTML = `0${
+        document.getElementById("part-one").value
+      }${document.getElementById("part-two").value}${
+        document.getElementById("part-three").value
+      }${document.getElementById("part-four").value}`;
+    });
+  });
+  // eerst eens voor 1'tje doen. lukt wel om iets random te pakken, maar is het dit wat gevraagd wordt?
+  /*
 data_min_string = document.getElementById("part-one").getAttribute("data-min");
 console.log(data_min_string);
 console.log(typeof data_min_string);
