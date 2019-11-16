@@ -12,10 +12,13 @@
 (() => {
   // your code here
 
+    // er zal nog iets met innerHTML moeten gebeuren. edit: nee: document fragment kan je wel wat mee doen
+  // zo wat met DOM en nodes spelen, geloof ik
+
   template = document.getElementById("tpl-hero");
-  // template_html = document.getElementById("tpl-hero").innerHTML;
+  template_html = document.getElementById("tpl-hero").innerHTML;
   // console.log(template);
-  // console.log(template_html);
+  console.log(template_html);
   // VERANDER ENKEL ORIGINELE
   /*
   template_content = template.content;
@@ -26,10 +29,10 @@
   // td[1].textContent = "Stuff";
   */
   target = document.getElementById("target");
- //  target.appendChild(template_content);
+  //  target.appendChild(template_content);
 
-
-  // SEBIET HETZELFDE DOEN MAAR MET CLONES
+  /*
+  // SEBIET HETZELFDE DOEN MAAR MET MEERDERE CLONES. UITEINDELIJK VERZET BINNEN FUNCTIE CHANGE
   var clone = document.importNode(template.content, true);
   var li = clone.querySelectorAll("li");
   li[0].textContent = "test clone 1";
@@ -42,6 +45,7 @@
   li[0].textContent = "test clone 2";
 
   target.appendChild(clone2);
+*/
 
   async function change() {
     await fetch("http://localhost:3000/heroes")
@@ -55,23 +59,35 @@
         // console.log(result.abilities)
         console.log(x_men);
         x_men.forEach(element => {
-          /*
-          console.log(element);
-          console.log(element.name);
-          console.log(element.alterEgo);
-          console.log(element.abilities);
-          
+          // console.log(element);
+          x_name = element.name;
+          // console.log(element.name);
+          x_alterEgo = element.alterEgo;
+          // console.log(element.alterEgo);
+          x_abilities = element.abilitites;
+          // console.log(element.abilities);
+          clone = document.importNode(template.content, true);
+          // var li = clone.querySelectorAll("li");
+          // li[0].textContent = "test clone";
+          name_class = clone.querySelector(".name");
+          name_class.textContent = x_name;
+          alter_ego_class = clone.querySelector(".alter-ego");
+          alter_ego_class.textContent = x_alterEgo;
+          powers_class = clone.querySelector(".powers");
+
           element.abilities.forEach(element => {
             console.log(element);
           });
-        */
+          // NIET MOOISTE OPLOSSING, WANT RESPECTEERT TEMPLATE, MAAR ZOU NOG WAT KUNNEN MOOIER PRESENTEREN, CSS AANPASSEN? MSS NOG NODE BIJMAKEN VOOR PARAGRAAF
+          x_abilities_string = element.abilities.join(" + ");
+          powers_class.textContent = x_abilities_string;
+
+          target.appendChild(clone);
         });
       });
   }
   document.getElementById("run").addEventListener("click", change);
 
-  // er zal nog iets met innerHTML moeten gebeuren. edit: nee: document fragment kan je wel wat mee doen
-  // zo wat met DOM en nodes spelen, geloof ik
 })();
 
 /*
