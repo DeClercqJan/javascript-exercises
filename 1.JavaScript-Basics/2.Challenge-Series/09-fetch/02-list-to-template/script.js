@@ -35,8 +35,22 @@
       });
   }
   document.getElementById("run").addEventListener("click", change);
-  console.log(document.getElementById("hero"));
-  // er zal nog iets met innerHTML moeten gebeuren
+
+  // er zal nog iets met innerHTML moeten gebeuren. edit: nee: document fragment kan je wel wat mee doen
+  // zo wat met DOM en nodes spelen, geloof ik
+
+
+  template = document.getElementById("tpl-hero");
+  template_html = document.getElementById("tpl-hero").innerHTML;
+  // console.log(template);
+  console.log(template_html);
+  template_content = template.content;
+  console.log(template_content);
+ var td = template_content.querySelectorAll("li");
+  td[0].textContent = "test123";
+  // td[1].textContent = "Stuff";
+  target = document.getElementById("target");
+  target.appendChild(template_content);
 })();
 
 /*
