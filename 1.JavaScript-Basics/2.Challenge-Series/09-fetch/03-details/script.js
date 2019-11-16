@@ -20,12 +20,36 @@
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        result.forEach(element => {
-            console.log(element);
-            console.log(element.id);
-            console.log(element.name);  
-            if (element.id == id_entered) {document.getElementById("target").innerHTML = element.name}
+        var template = document.querySelector("#tpl-hero");
+        console.log(template.innerHTML);
+        var template_node = document.importNode(template.content, true);
+        template_name = template_node.querySelector(".name");
+        template_alter_ego = template_node.querySelector(".alter-ego");
+        template_powers = template_node.querySelector(".powers");
+
+         result.forEach(element => {
+          // console.log(element);
+          // console.log(element.id);
+          // console.log(element.name);
+          console.log(element.alterEgo);
+          // if (element.id == id_entered) {document.getElementById("target").innerHTML = element.name}
+          if (element.id == id_entered) {
+                                      template_name.textContent = element.name;
+                                      template_alter_ego.textContent = element.alterEgo;
+                                      console.log(element.abilities);
+                                      element.abilities.forEach(element => {
+                                          console.log(element);
+                                      });
+                                      element_abilities_string = element.abilities.join(" + ");
+                                      template_powers.textContent = element_abilities_string;
+
+          }
+          else {
+              template_name.textContent = "nu such hero exists";
+          }
         });
+        target = document.getElementById("target");
+        target.appendChild(template_node);
       });
   }
 
