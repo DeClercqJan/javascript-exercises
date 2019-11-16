@@ -12,6 +12,37 @@
 (() => {
   // your code here
 
+  template = document.getElementById("tpl-hero");
+  // template_html = document.getElementById("tpl-hero").innerHTML;
+  // console.log(template);
+  // console.log(template_html);
+  // VERANDER ENKEL ORIGINELE
+  /*
+  template_content = template.content;
+  console.log(template_content);
+  var li = template_content.querySelectorAll("li");
+  console.log(li);
+  li[0].textContent = "test123";
+  // td[1].textContent = "Stuff";
+  */
+  target = document.getElementById("target");
+ //  target.appendChild(template_content);
+
+
+  // SEBIET HETZELFDE DOEN MAAR MET CLONES
+  var clone = document.importNode(template.content, true);
+  var li = clone.querySelectorAll("li");
+  li[0].textContent = "test clone 1";
+
+  target.appendChild(clone);
+
+  // Clone the new row and insert it into the table
+  var clone2 = document.importNode(template.content, true);
+  li = clone2.querySelectorAll("li");
+  li[0].textContent = "test clone 2";
+
+  target.appendChild(clone2);
+
   async function change() {
     await fetch("http://localhost:3000/heroes")
       .then(ste => ste.json())
@@ -24,13 +55,16 @@
         // console.log(result.abilities)
         console.log(x_men);
         x_men.forEach(element => {
+          /*
           console.log(element);
           console.log(element.name);
           console.log(element.alterEgo);
           console.log(element.abilities);
+          
           element.abilities.forEach(element => {
             console.log(element);
           });
+        */
         });
       });
   }
@@ -38,19 +72,6 @@
 
   // er zal nog iets met innerHTML moeten gebeuren. edit: nee: document fragment kan je wel wat mee doen
   // zo wat met DOM en nodes spelen, geloof ik
-
-
-  template = document.getElementById("tpl-hero");
-  template_html = document.getElementById("tpl-hero").innerHTML;
-  // console.log(template);
-  console.log(template_html);
-  template_content = template.content;
-  console.log(template_content);
- var td = template_content.querySelectorAll("li");
-  td[0].textContent = "test123";
-  // td[1].textContent = "Stuff";
-  target = document.getElementById("target");
-  target.appendChild(template_content);
 })();
 
 /*
