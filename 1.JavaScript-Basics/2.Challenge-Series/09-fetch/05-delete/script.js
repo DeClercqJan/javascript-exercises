@@ -22,7 +22,8 @@
     hero_id = document.getElementById("hero-id").value;
     console.log(hero_id);
 
-    // met deze functie het wat anders aangepakt door in de url te werken. Maar het lukt me niet om er NADIEN een then en console.log van te maken. pas met het herladen van de pagina en auto uitvoeren van een andere fetch functie lukt het om de nieuwe array in de console weer te geve n 
+    // met deze functie het wat anders aangepakt door in de url te werken. Maar het lukt me niet om er NADIEN een then en console.log van te maken. pas met het herladen van de pagina en auto uitvoeren van een andere fetch functie lukt het om de nieuwe array in de console weer te geven
+    // heb overigens ook eens gekeken naar de verbetering, maar die slaagt er helemaal niet in om resultaat in console weer te geven 
     fetch(`http://localhost:3000/heroes/${hero_id}`, {
       method: "DELETE"
     });
