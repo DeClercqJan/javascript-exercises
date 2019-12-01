@@ -18,6 +18,7 @@
     })
 */
   // sander zijn oplossing
+  /*
   (() => {
     const callback = (err, articles) => {
       console.table(articles);
@@ -27,7 +28,22 @@
       window.lib.getPosts(callback);
     });
   })();
-  
+  */
+  //
+
+  // EDIT: nog eens opnieuw bekeken en dit werkt. Belangrijkste les: je moet callback.js als externe api beschouwen en dan kan je zien dat wat ik hier callback noem daar next is en de tweede parameter, los van hoe het noemt, de array is 
+  function callback(error, articles) {
+    if (error) {
+      console.log(error);
+    }
+    if (articles) {
+      console.log(articles);
+    }
+  }
+
+  document.getElementById("run").addEventListener("click", () => {
+    window.lib.getPosts(callback);
+  });
 })();
 
 /*
