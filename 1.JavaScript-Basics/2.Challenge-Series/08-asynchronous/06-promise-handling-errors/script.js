@@ -15,7 +15,7 @@
         console.log("test");
         window.lib.getPersons()
         .then (result => console.log(result))
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
     })
 })();
 
