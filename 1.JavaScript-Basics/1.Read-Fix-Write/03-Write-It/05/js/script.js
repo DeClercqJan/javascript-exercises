@@ -35,15 +35,20 @@ const extras = [
 
 fees.forEach(function(fee) {
     document.write(`Het ${fee.title} kost ${fee.price} </br>`);
+    // edit: opgelost! Wel vaak dezelfde, want telkens random. VOlgens de opgave correct, maar herhaling zou in 't echt niet mogen, denk ik
+    var randomItem = extras[Math.floor(Math.random()*extras.length)];
+    console.log(randomItem.title);
+    document.write(`Trouwens, een ${randomItem.title} kost ${randomItem.price} </br>`);
 });
 
 extras.forEach(function(extra) {
-  document.write(`Het ${extra.title} kost ${extra.price} </br>`);
+  // document.write(`Het ${extra.title} kost ${extra.price} </br>`);
 });
 
 // to do: 1. in (of op een andere manier...?) in de functie voor fees ook de elementen van fees aanroepen
 //        2. onderstaande functie gebruiken om een 3 willekeurige suppelementen bij elk van de standaardtarieven te zetten. 
 
+/*
 var myArray = [
   "Apples",
   "Bananas",
@@ -53,6 +58,7 @@ var myArray = [
 var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
 console.log(randomItem);
 document.write(randomItem);
+*/
 
 /* kging er eerst 1 array van maken, maar dat zal het niet zijn 
 const producten =  fees.concat(extras);
@@ -60,6 +66,7 @@ console.log(producten);
 edit: eens multidimensional array van maken
 */
 
+/*
 var producten = [];
 producten.push(fees);
 producten.push(extras);
@@ -73,11 +80,7 @@ producten.forEach(function(product) {
   console.log(product);
   document.write(`Het ${product.title} kost ${product.price} </br>`);
 });
-
-for (var product in producten) {
-  console.log(product[0][1]);
-  console.log(product[1][2]);
-  };
+/*
 
 /*
 # WRITE IT

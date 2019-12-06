@@ -14,9 +14,9 @@
     time_now = new Date();
     console.log(time_now);
     time_now_hours = time_now.getHours();
+    time_now_hours = 5;
     console.log(time_now_hours);
-    // time_now_hours = 23;
-    if (time_now_hours < 18 && time_now_hours > 5) {
+    if (time_now_hours < 18 && time_now_hours <= 5) {
         console.log("hello");
         document.getElementById("target").innerHTML = "hello";
     }
