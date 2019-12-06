@@ -11,4 +11,16 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", function () {
+        console.log("test");
+        window.lib.getPersons()
+        .then (result => console.log(result))
+        .catch(error => console.log(error));
+    })
 })();
+
+/*
+<p>The function window.lib.getPersons() is available in the script. It returns a Promise that will be resolved, after a short delay, with a table of people.
+<p>When you click on the button, call the getPersons function and display the result obtained in the console. Warning: the Promise returned by the getPersons function has more or less a half chance of being rejected with an error. If so, use console.error() to display it).</p>
+
+*/
