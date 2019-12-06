@@ -29,14 +29,14 @@
           // console.log(article_id);
           resolve(window.lib.getComments(article_id));
         })
-          /* HEB IK DIE ARTICLES_ARRAY_MODIFIED WEL NODIG?
-        .then(function(comments) {
-            // console.log(comments)
-            element.comments = comments;
-            // console.log(element);
-            articles_array_modified.push(element);
-        })
-        */
+        // HEB IK DIE ARTICLES_ARRAY_MODIFIED WEL NODIG?
+        // .then(function(comments) {
+        //    // console.log(comments)
+        //    element.comments = comments;
+        //    // console.log(element);
+        //    articles_array_modified.push(element);
+        // })
+        
        // DIT VOLSTAAT BLIJKBAAR OM BOVENSTAANDE CONSOLE.LOG(RESOLVE) TE BEVOLKEN ...?
           .then(function(comments) {
             // console.log(comments)
@@ -47,6 +47,29 @@
       //      console.log(articles_array_modified);
     });
   });
+
+  /*
+  // de oplossing van Leny is eleganter, maar inhoudelijk hetzelfde. Verklaart alleen nog niet waarom ik de hoog aangeroepen console.log kan bevolken alvorens de bewerkeingen gedaan te hebben ... want bij hem is het hetzelfde
+  document.querySelector("#run").addEventListener("click", () => {
+    window.lib
+        .getPosts()
+        .then(posts => {
+            // ik: net als bij mijn oplossing kan ik console.log hier zetten en laten bevolken door wat volgt ...
+            // console.log(posts);
+            Promise.all(
+                posts.map(post => window.lib.getComments(post.id)),
+            ).then(postComments => {
+                postComments.forEach((comments, i) => {
+                    posts[i].comments = comments;
+                });
+                console.log(posts);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
+*/
 })();
 
 /*
